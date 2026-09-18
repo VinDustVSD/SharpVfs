@@ -1,0 +1,112 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{cs,csx}]
+# --- File structure ---
+file_scoped_namespace_declaration = true
+csharp_style_namespace_declarations = file_scoped:error
+
+# --- Nullable ---
+dotnet_style_null_propagation = true:suggestion
+csharp_style_prefer_null_check_over_type_check = true:suggestion
+dotnet_style_coalesce_expression = true:suggestion
+
+# --- Namespace vs folder: DISABLED (folder layout != namespace by design) ---
+dotnet_diagnostic.IDE0130.severity = none
+
+# --- Explicit types vs var ---
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+# --- `this.` qualifier: prefer none ---
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+dotnet_style_qualification_for_event = false:suggestion
+
+# --- Sealed by default (per project policy) ---
+dotnet_diagnostic.CA1852.severity = suggestion
+
+# --- XML doc: mandatory on public members ---
+dotnet_diagnostic.CS1591.severity = error
+
+# --- StyleCop / Roslynator: start relaxed, tighten as we go ---
+dotnet_diagnostic.SA0001.severity = none
+dotnet_diagnostic.SA1633.severity = none
+dotnet_diagnostic.SA1600.severity = warning
+dotnet_diagnostic.SA1101.severity = none
+dotnet_diagnostic.RCS1090.severity = none
+
+# --- SA1309 (field names must not begin with underscore) ---
+# Legacy StyleCop rule that conflicts with modern .NET convention (_camelCase).
+dotnet_diagnostic.SA1309.severity = none
+# --- SA1200 (using directives must be inside namespace) ---
+# Legacy rule; modern .NET convention places usings outside the namespace.
+dotnet_diagnostic.SA1200.severity = none
+# --- StyleCop: disable legacy/noisy rules, keep the useful ones ---
+
+# SA1200: usings outside namespace are fine.
+dotnet_diagnostic.SA1200.severity = none
+
+# SA1309: field names must not begin with underscore (conflicts with _camelCase).
+dotnet_diagnostic.SA1309.severity = none
+
+# SA1101: prefix local calls with 'this.' — we explicitly prefer no 'this.'.
+dotnet_diagnostic.SA1101.severity = none
+
+# SA1633: file header copyright — we don't enforce file headers.
+dotnet_diagnostic.SA1633.severity = none
+
+# SA1600 / SA1601 / SA1602: elements must be documented.
+# CS1591 already enforces XML-doc on public API. StyleCop's variants
+# additionally demand docs on private/internal members, which we don't want.
+dotnet_diagnostic.SA1600.severity = none
+dotnet_diagnostic.SA1601.severity = none
+dotnet_diagnostic.SA1602.severity = none
+
+# SA1201: elements must appear in correct order (fields, constructors, properties...).
+# Too rigid; we order for readability, not for StyleCop's taste.
+dotnet_diagnostic.SA1201.severity = none
+
+# SA1202 / SA1203 / SA1204: ordering by access modifier / static / readonly.
+# Also too rigid.
+dotnet_diagnostic.SA1202.severity = none
+dotnet_diagnostic.SA1203.severity = none
+dotnet_diagnostic.SA1204.severity = none
+
+# SA1413: trailing comma in multi-line initializers — we allow both forms.
+dotnet_diagnostic.SA1413.severity = none
+
+# SA1503: braces should not be omitted — SDK rules already cover this (IDE0011).
+dotnet_diagnostic.SA1503.severity = none
+
+# SA1516: elements must be separated by blank line — noisy, SDK covers.
+dotnet_diagnostic.SA1516.severity = none
+
+# SA1124: regions — we don't forbid regions outright, just don't require them.
+dotnet_diagnostic.SA1124.severity = none
+
+# SA1009 / SA1111: closing parenthesis / bracket spacing — SDK covers.
+dotnet_diagnostic.SA1009.severity = none
+dotnet_diagnostic.SA1111.severity = none
+
+# SX1101: do not prefix local calls with 'this.' — already off via SA1101.
+dotnet_diagnostic.SX1101.severity = none
+
+# SA1649: file name must match first type name. Conflicts with multi-type files
+# and with VfsScheme being defined alongside related enums.
+dotnet_diagnostic.SA1649.severity = none
+
+# SA1402: file may only contain a single type. Too restrictive for small helper types.
+dotnet_diagnostic.SA1402.severity = none
+
+# SA1601: partial elements must be documented. We use partial rarely.
+dotnet_diagnostic.SA1601.severity = none
