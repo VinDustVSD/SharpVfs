@@ -2,9 +2,12 @@
   <Folder Name="/src/">
     <Project Path="src/VinDust.SharpVfs.Abstractions/VinDust.SharpVfs.Abstractions.csproj" />
     <Project Path="src/VinDust.SharpVfs.Core/VinDust.SharpVfs.Core.csproj" />
+    <Project Path="src/VinDust.SharpVfs.FileSystems.Memory/VinDust.SharpVfs.FileSystems.Memory.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/VinDust.SharpVfs.Abstractions.Tests/VinDust.SharpVfs.Abstractions.Tests.csproj" />
     <Project Path="tests/VinDust.SharpVfs.Core.Tests/VinDust.SharpVfs.Core.Tests.csproj" />
+    <Project Path="tests/VinDust.SharpVfs.FileSystems.Tests/VinDust.SharpVfs.FileSystems.Tests.csproj" />
+    <Project Path="tests/VinDust.SharpVfs.Integration.Tests/VinDust.SharpVfs.Integration.Tests.csproj" />
   </Folder>
 </Solution>

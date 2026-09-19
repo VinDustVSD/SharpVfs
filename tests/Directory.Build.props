@@ -1,0 +1,23 @@
+<Project>
+
+  <!-- Inherit root Directory.Build.props explicitly: MSBuild picks the nearest one,
+       so without this import the root settings would be ignored. -->
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup>
+    <!-- Test projects are never packed. -->
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+
+    <!-- No XML-doc on test methods; no underscore ban (test naming convention). -->
+    <NoWarn>$(NoWarn);CS1591;CA1707</NoWarn>
+
+    <!-- Still want analyzers to run, just not these two rules. -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- StyleCop / Roslynator are inherited from root via the .editorconfig. -->
+  </ItemGroup>
+
+</Project>

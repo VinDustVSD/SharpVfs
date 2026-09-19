@@ -1,9 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <IsPackable>true</IsPackable>
-    <Description>Core abstractions for SharpVfs: paths, file system interfaces, entries, mount options.</Description>
+    <Description>In-memory file system implementation for SharpVfs.</Description>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VinDust.SharpVfs.Abstractions\VinDust.SharpVfs.Abstractions.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers">
@@ -17,9 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="VinDust.SharpVfs.Core" />
-    <InternalsVisibleTo Include="VinDust.SharpVfs.Abstractions.Tests" />
-    <InternalsVisibleTo Include="VinDust.SharpVfs.Core.Tests" />
+    <InternalsVisibleTo Include="VinDust.SharpVfs.FileSystems.Tests" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,42 @@
+is_global = true
+
+# --- File header / documentation on non-public members ---
+dotnet_diagnostic.SA1633.severity = none
+dotnet_diagnostic.SA1600.severity = none
+dotnet_diagnostic.SA1601.severity = none
+dotnet_diagnostic.SA1602.severity = none
+
+# --- Naming: allow _camelCase private fields ---
+dotnet_diagnostic.SA1309.severity = none
+
+# --- this. prefix: prefer none ---
+dotnet_diagnostic.SA1101.severity = none
+dotnet_diagnostic.SX1101.severity = none
+
+# --- Member ordering: not enforced ---
+dotnet_diagnostic.SA1201.severity = none
+dotnet_diagnostic.SA1202.severity = none
+dotnet_diagnostic.SA1203.severity = none
+dotnet_diagnostic.SA1204.severity = none
+
+# --- Usings outside namespace: allowed ---
+dotnet_diagnostic.SA1200.severity = none
+
+# --- Single type per file / filename match: relaxed ---
+dotnet_diagnostic.SA1402.severity = none
+dotnet_diagnostic.SA1649.severity = none
+
+# --- Trailing comma / blank lines / brace style: SDK covers these ---
+dotnet_diagnostic.SA1413.severity = none
+dotnet_diagnostic.SA1503.severity = none
+dotnet_diagnostic.SA1516.severity = none
+dotnet_diagnostic.SA1009.severity = none
+dotnet_diagnostic.SA1111.severity = none
+dotnet_diagnostic.SA1124.severity = none
+
+# --- CA1711 fires on FileWriteMode.CreateNew; renamed to CreateExclusive, so leave default ---
+
+# SA1200: Using directives should be placed correctly
+dotnet_diagnostic.SA1200.severity = none
+# SA1312: variable names must begin with lowercase — false positive on discard-style '_'.
+dotnet_diagnostic.SA1312.severity = none
