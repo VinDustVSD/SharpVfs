@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Runtime.CompilerServices;
 using VinDust.SharpVfs.Abstractions;
+using VinDust.SharpVfs.Abstractions.Exceptions;
 using VinDust.SharpVfs.Abstractions.Paths;
 
 namespace VinDust.SharpVfs.Core;
@@ -70,6 +66,22 @@ public sealed class VfsRoot : IAsyncDisposable
         var fs = await _dispatcher.GetFileSystemAsync(uri.Scheme, ct).ConfigureAwait(false);
         var entry = await fs.GetEntryAsync(uri.Path, ct).ConfigureAwait(false);
         return entry is null ? null : new VfsEntry(uri, entry);
+    }
+
+    /// <summary>
+    /// Resolves a URI to its owning file system and path, reporting every mount point
+    /// crossed on the way.
+    /// </summary>
+    /// <param name="uri">The URI to resolve.</param>
+    /// <param name="ct">A token to observe.</param>
+    /// <returns>The resolution, including the crossed mount chain.</returns>
+    /// <exception cref="VfsSchemeNotFoundException">Thrown when the URI's scheme is not registered.</exception>
+    /// <exception cref="VfsMountCycleException">Thrown when the resolution encounters a mount cycle.</exception>
+    public async ValueTask<VfsResolution> GetResolutionAsync(VfsUri uri, CancellationToken ct = default)
+    {
+        ThrowIfDisposed();
+        var fs = await _dispatcher.GetFileSystemAsync(uri.Scheme, ct).ConfigureAwait(false);
+        return VfsChainResolver.Resolve(fs, uri.Path);
     }
 
     /// <summary>Enumerates the immediate children of the directory at the given URI.</summary>

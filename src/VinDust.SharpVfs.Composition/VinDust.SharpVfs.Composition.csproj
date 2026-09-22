@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <Description>Composable decorators for SharpVfs: read-only, caching, union, copy-on-write, sub-file-system.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VinDust.SharpVfs.Abstractions\VinDust.SharpVfs.Abstractions.csproj" />
+    <ProjectReference Include="..\VinDust.SharpVfs.Core\VinDust.SharpVfs.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Roslynator.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="VinDust.SharpVfs.Composition.Tests" />
+  </ItemGroup>
+
+</Project>
