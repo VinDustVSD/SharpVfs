@@ -23,15 +23,16 @@
 
   <!-- Package metadata (applies to packable projects only). -->
   <PropertyGroup>
+	<Version>1.0.0</Version>
     <Authors>VinDust</Authors>
     <Company>VinDust</Company>
     <Product>SharpVfs</Product>
+	<PackageOutputPath>$(MSBuildThisFileDirectory)local-packages</PackageOutputPath>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/vindust/sharpvfs</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/vindust/sharpvfs</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/VinDustVSD/SharpVfs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/VinDustVSD/SharpVfs</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>vfs;virtual-file-system;filesystem;zip;union-mount</PackageTags>
-    <VersionPrefix>0.1.0</VersionPrefix>
   </PropertyGroup>
 
 </Project>

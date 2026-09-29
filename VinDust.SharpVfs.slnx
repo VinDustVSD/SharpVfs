@@ -17,4 +17,5 @@
     <Project Path="tests/VinDust.SharpVfs.FileSystems.Tests/VinDust.SharpVfs.FileSystems.Tests.csproj" />
     <Project Path="tests/VinDust.SharpVfs.Integration.Tests/VinDust.SharpVfs.Integration.Tests.csproj" />
   </Folder>
+  <Project Path="VinDust.SharpVfs/VinDust.SharpVfs.csproj" Id="eef7b25d-83a0-4ff3-8ab5-a580092bbe83" />
 </Solution>
