@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+	<IncludeBuildOutput>false</IncludeBuildOutput>
+	<PackageId>VinDust.SharpVfs</PackageId>
+	<Version>1.0.0</Version>
+	<Description>MetaPacket SharpVfs.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\src\VinDust.SharpVfs.Abstractions\VinDust.SharpVfs.Abstractions.csproj" PrivateAssets="all" />
+	<ProjectReference Include="..\src\VinDust.SharpVfs.Core\VinDust.SharpVfs.Core.csproj" PrivateAssets="all" />
+	<ProjectReference Include="..\src\VinDust.SharpVfs.Composition\VinDust.SharpVfs.Composition.csproj" PrivateAssets="all" />
+	<ProjectReference Include="..\src\VinDust.SharpVfs.FileSystems.Memory\VinDust.SharpVfs.FileSystems.Memory.csproj" PrivateAssets="all" />
+	<ProjectReference Include="..\src\VinDust.SharpVfs.FileSystems.Zip\VinDust.SharpVfs.FileSystems.Zip.csproj" PrivateAssets="all" />
+	<ProjectReference Include="..\src\VinDust.SharpVfs.FileSystems.Physical\VinDust.SharpVfs.FileSystems.Physical.csproj" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

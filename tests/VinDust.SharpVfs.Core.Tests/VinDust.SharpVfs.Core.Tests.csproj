@@ -12,9 +12,13 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
+	<PackageReference Include="FluentAssertions" />
   </ItemGroup>
 
   <ItemGroup>
+	<ProjectReference Include="..\..\src\VinDust.SharpVfs.Core\VinDust.SharpVfs.Core.csproj" />
+	<ProjectReference Include="..\..\src\VinDust.SharpVfs.FileSystems.Memory\VinDust.SharpVfs.FileSystems.Memory.csproj" />
+	<ProjectReference Include="..\..\src\VinDust.SharpVfs.FileSystems.Zip\VinDust.SharpVfs.FileSystems.Zip.csproj" />
     <Using Include="Xunit" />
   </ItemGroup>
 

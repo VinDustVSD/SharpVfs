@@ -16,4 +16,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="VinDust.SharpVfs.Core" />
+    <InternalsVisibleTo Include="VinDust.SharpVfs.Abstractions.Tests" />
+    <InternalsVisibleTo Include="VinDust.SharpVfs.Core.Tests" />
+  </ItemGroup>
+
 </Project>

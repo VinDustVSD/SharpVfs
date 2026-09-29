@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="coverlet.collector" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\VinDust.SharpVfs.Abstractions\VinDust.SharpVfs.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\VinDust.SharpVfs.Composition\VinDust.SharpVfs.Composition.csproj" />
+    <ProjectReference Include="..\..\src\VinDust.SharpVfs.FileSystems.Memory\VinDust.SharpVfs.FileSystems.Memory.csproj" />
+  </ItemGroup>
+
+</Project>
